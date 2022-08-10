@@ -1,0 +1,33 @@
+<html>     
+    <head>         
+        <title>Tasks</title>     
+    </head>     
+    <body>      
+        <h2><center><font color="blue">Created Tasks</font></center></h2>      
+        <p><center>{{ .Pesan }}</center> </p>
+        <hr><br/>          
+        <table border="3" cellpadding="6" cellspacing="1" align="center">       
+            <thead>        
+                <tr>         
+                    <th>Tasks</th>         
+                    <th>Assignee</th>         
+                    <th>Deadline</th>         
+                    <th>Status</th>         
+                    <th>Aksi</th>        
+                </tr>       
+            </thead>       
+            <tbody>        
+                {{ range $key, $value := .Data }}        
+                <tr align="center">         
+                    <td>{{ $value.Tasks }}</td>         
+                    <td>{{ $value.Assignee }}</td>         
+                    <td>{{ $value.Deadline }}</td>         
+                    <td>{{ $value.Status }}</td>         
+                    <td><button><a href="/?aksi=ubah&tasks={{ $value.Tasks }}">Ubah </a></button> - <button><a href="/?aksi=hapus&tasks={{ $value.Tasks }}"> Hapus</a></button></td>
+                </tr>    
+                {{ end }}    
+            </tbody>         
+        </table><br/>
+        <center/><a href="/?aksi=tambah"><button>Tambah</button></a>     
+    </body> 
+</html> 

@@ -1,0 +1,17 @@
+<html> 
+    <head>   
+        <title>Edit Task</title> 
+    </head> 
+    <body>     
+        <h2><center><font color="blue">Edit Task</font></center></h2>   
+        <center/><a href="/">Batal</a>    
+        <hr>   
+        <form method="POST" action="/ubah" align="center">                  
+            <label>Task <br><input name="tasks" type="text" value="{{ (index .Data 0).Tasks }}" readonly="readonly"></label><br>
+            <label><br>Assignee <br><input name="assignee" type="text" value="{{ (index .Data 0).Assignee }}"></label><br>       
+            <label><br>Deadline <br><input name="deadline" type="text" value="{{ (index .Data 0).Deadline }}"></label><br>       
+            <label><br>Status <br><input name="status" type="number" value="{{ (index .Data 0).Status }}"></label><br> <br/>      
+            <input type="submit" value="Ubah" />
+        </form> 
+</body> 
+</html> 
